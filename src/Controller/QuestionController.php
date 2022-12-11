@@ -15,9 +15,12 @@ class QuestionController
         return new Response('What a bewitching controller we have conjured!');
     }
 
-    #[Route('/questions/how-to-tie-my-shoes-with-magic')]
-    public function show()
+    #[Route('/questions/{slug}')]
+    public function show(string $slug)
     {
-        return new Response('Future Page to show a questions!');
+        return new Response(\sprintf(
+            'Future Page to show a questions [%s]!',
+            ucwords(str_ireplace('-', ' ', $slug))
+        ));
     }
 }
