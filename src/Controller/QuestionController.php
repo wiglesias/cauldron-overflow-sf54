@@ -10,10 +10,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class QuestionController extends AbstractController
 {
-    #[Route('/', name: 'app_homepage')]
+    #[Route('/', name: 'app_question_homepage')]
     public function homepage()
     {
-        return new Response('What a bewitching controller we have conjured!');
+        return $this->render('question/homepage.html.twig');
     }
 
     #[Route('/questions/{slug}', name: 'app_question_show')]
