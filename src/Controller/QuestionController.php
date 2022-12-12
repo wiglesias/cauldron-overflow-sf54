@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class QuestionController extends AbstractController
 {
-    #[Route('/', name: 'app_question_homepage')]
+    #[Route('/', name: 'app_homepage')]
     public function homepage()
     {
         return $this->render('question/homepage.html.twig');
