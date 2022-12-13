@@ -10,8 +10,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class QuestionController extends AbstractController
 {
     #[Route('/', name: 'app_homepage')]
-    public function homepage()
+    public function homepage() // homepage(Environment $twigEvironment) <=== exmple use Twig service
     {
+        // fun example of using the Twig service directly
+        // $html = $twigEvironment->render('question/homepage.html.twig');
+
+        // return new Response($html);
         return $this->render('question/homepage.html.twig');
     }
 
